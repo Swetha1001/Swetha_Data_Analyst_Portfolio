@@ -23,22 +23,7 @@ It analyzes sales data to uncover trends in revenue, product performance, custom
 
 ---
 
-## 📌 Problem Statement  
-
-Ferns and Petals (FNP) is a leading gifting company that delivers products for occasions such as Diwali, Raksha Bandhan, Holi, Valentine’s Day, Birthdays, and Anniversaries. 
-The company wants to leverage its sales data to uncover trends, understand customer behavior, and evaluate product performance in order to enhance sales strategy and customer satisfaction.
-You have been provided with a dataset containing details of products, orders, customers, and delivery information.
-The task is to create an interactive dashboard and analyze the data to address the following business questions:
-1.Total Revenue: Identify the overall revenue.
-2.Average Order and Delivery Time: Evaluate the time taken for orders to be delivered.
-3. Sales Performance: Examine how sales fluctuate across the months of 2023.
-4.Top Products by Revenue: Determine which products are the top revenue generators.
-5.Customer Spending Analysis: Understand how much customers are spending on average.
-6.Sales Performance by Top 5 Product: Track the sales performance of top 5 products.
-7.Top 10 Cities by Number of Orders: Find out which cities are placing the highest number of orders.
-8.Order Quantity vs. Delivery Time: Analyze if higher order quantities impact delivery times.
-9.Revenue Comparison Between Occasions: Compare revenue generated across different occasions.
-10.Product Popularity by Occasion: Identify which products are most popular during specific occasions.
+## 📌 Problem Statement 
 
 This project demonstrates the use of data analysis and visualization to generate actionable insights, supporting Ferns and Petals in making data-driven business decisions.
 ---
