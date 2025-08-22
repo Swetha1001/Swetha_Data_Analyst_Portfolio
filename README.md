@@ -25,7 +25,8 @@ It analyzes sales data to uncover trends in revenue, product performance, custom
 
 ## 📌 Problem Statement 
 
-This project demonstrates the use of data analysis and visualization to generate actionable insights, supporting Ferns and Petals in making data-driven business decisions.
+You are provided with sales data containing details about orders, products, customers, and dates.  
+The objective is to create an **interactive Excel dashboard** and answer the key business questions:  
 ---
 
 ## 📌 Key Insights  
