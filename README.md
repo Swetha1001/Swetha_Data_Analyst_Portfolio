@@ -18,11 +18,11 @@ It analyzes sales data to uncover trends in revenue, product performance, custom
 ---
 
 ## 📁 Files Included  
--`Customers`,`Orders` and `Products`→ The original sales dataset used to an **interactive Excel dashboard** 
-- `Problem Statement- Ferns and Petals Sales Analysis` → Excel dashboard & dataset  
-- `Sales Analysis` → Folder containing dashboard preview images
-- - `Sales_Analysis_Dashboard` → Dashboard preview images  
-
+-`Customers.xlsx`,`Orders.xlsx` and `Products.xlsx`→ Raw sales dataset used for building the dashboard** 
+- `Problem Statement- Ferns and Petals Sales Analysis.pdf` → riginal problem statement document
+- `Sales Analysis.xlsx` → Processed Excel file with cleaning, analysis, and dashboard 
+- `Sales_Analysis_Dashboard.png` → Screenshot preview of the final dashboard
+    
 ---
 
 ## 📌 Problem Statement  
