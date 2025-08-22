@@ -108,4 +108,5 @@ GROUP BY Attrition;
 --What is the average age by education field?
 SELECT EducationField,AVG(Age) AS Average_Age
 FROM HR_Analytics
+
 GROUP BY EducationField;
