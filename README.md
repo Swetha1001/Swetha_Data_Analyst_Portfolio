@@ -23,7 +23,7 @@ It analyzes sales data to uncover trends in revenue, product performance, custom
 
 ---
 
-## 📌 Key Insights  
+## 📌 Problem Statement  
 
 You are provided with sales data containing details about orders, products, customers, and dates.  
 The objective is to create an **interactive Excel dashboard** and answer the key business questions:  
