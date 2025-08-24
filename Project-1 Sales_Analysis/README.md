@@ -12,7 +12,7 @@ It analyzes sales data to uncover trends in revenue, product performance, custom
 
 ## 📊 Dashboard Preview  
 
-![Sales Dashboard](Sales_Analysis_Dashboard.png)  
+[Sales Dashboard](Sales_Analysis_Dashboard.png)  
 
 
 ---
