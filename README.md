@@ -1,6 +1,6 @@
-# Overview
+# Data Jobs Data Analysis using Python
 
-Welcome to my analysis of the data job market, focusing on data analyst roles. This project was created out of a desire to navigate and understand the job market more effectively.
+This project analyses the data job market, focusing on data analyst roles. This project was created out of a desire to navigate and understand the job market more effectively.
 
 The data sourced from [Luke Barousse's Python Course](https://lukebarousse.com/python) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data analytics.
 
