@@ -117,9 +117,10 @@ plt.title('Number of Jobs per Company')
 plt.xlabel('Number of Jobs')
 plt.ylabel('')
 plt.show()
+```
 This visualization highlights the companies hiring the most for data-related positions.
 By analyzing the number of job postings per company, we can identify which organizations are driving demand in the data job market.
-```
+
 
 This visualization highlights the top companies actively hiring for data-related positions.
 By analyzing the number of job postings per company, we can identify key organizations leading the demand for data professionals.
