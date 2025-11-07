@@ -80,7 +80,7 @@ Each Jupyter notebook for this project aimed at investigating specific aspects o
 
 ## 1.  What are the most in-demand data job roles?
 
-```Code
+```python
 df_plot = df['job_title_short'].value_counts().to_frame()
 
 sns.set_theme(style='ticks')
