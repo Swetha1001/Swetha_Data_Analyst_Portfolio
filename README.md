@@ -206,6 +206,81 @@ Key Insights:
 💼 These trends show that while remote opportunities exist, major global cities remain key hubs for data professionals, offering diverse opportunities across analytics, engineering, and data science.
 ---
 
+##Salary Analysis:
+“Each Jupyter notebook in this project focuses on exploring different aspects of salary analysis. The following outlines my approach to each research question:”
+
+## 1. Salary by Job Titles
+```python
+top_roles = df.groupby('job_title_short')['salary_year_avg'].mean().sort_values(ascending=False).head(10)
+
+plt.figure(figsize=(8,5))
+sns.barplot(x=top_roles.values, y=top_roles.index)
+plt.title("Top 10 Highest Paying Jobs")
+plt.xlabel("Average Salary (USD)")
+plt.ylabel("Job Title")
+plt.show()
+```
+
+This visualization displays the average salary for different data-related job titles, highlighting the highest-paying roles in the industry.
+
+Key Insights:
+
+💰 Senior Data Scientist tops the list as the highest-paying role, reflecting its advanced expertise and responsibilities.
+🧠 Senior Data Engineer follows closely, indicating strong compensation for technical engineering leadership.
+📊 Roles like Data Scientist, Data Engineer, and Machine Learning Engineer also offer competitive salaries, making them attractive career options.
+💡 Overall, senior-level positions command the highest pay, while specialized technical roles continue to be well-compensated in the data industry.
+
+
+## 2. Salary by Country
+```python
+
+top_countries = df.groupby('job_country')['salary_year_avg'].mean().sort_values(ascending=False).head(10)
+
+plt.figure(figsize=(8,5))
+sns.barplot(x=top_countries.values, y=top_countries.index)
+plt.title("Top 10 Countries by Average Salary")
+plt.xlabel("Average Salary (USD)")
+plt.ylabel("Country")
+plt.show()
+```
+
+This visualization shows the average salary for data jobs across different countries, highlighting the highest-paying regions.
+
+Key Insights:
+
+🌍 Belarus tops the list with a significantly higher average salary, making it a clear outlier.
+🇷🇺 Russia comes next, with a large difference from the remaining countries.
+🇧🇸 Bahamas ranks third, followed by
+🇩🇴 Dominican Republic and 🇲🇵 Northern Mariana Islands, which have similar average salaries and cluster closely together.
+💡 These results indicate that while a few countries dominate in compensation, smaller or niche markets also provide competitive opportunities for data professionals globally.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```python
 fig, ax = plt.subplots(len(job_titles), 1)
 
