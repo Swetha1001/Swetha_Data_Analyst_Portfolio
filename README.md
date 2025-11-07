@@ -3,16 +3,28 @@
 This project analyses the data job market, focusing on data analyst roles. This project was created out of a desire to navigate and understand the job market more effectively.
 
 The data sourced from [Luke Barousse's Python Course](https://lukebarousse.com/python) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data analytics.
+---
+
+📁 Project Structure
+- `Job Market Analysis`: SQL scripts used for analysis.
+- `Salary Analysis`: Power BI dashboard file.   
+- `Skills_Trend`: Screenshot preview of the final dashboard.
+- `Data_jobs.csv`: Excel Dataset
+- `README.md`: Project documentation.
+
+---
 
 # The Questions
 
-Below are the questions I want to answer in my project:
+-Clean and preprocess raw job posting data using Python and Pandas.
+-Analyze hiring trends across job titles, companies, and locations.
+-Identify the most in-demand data roles and required skills.
+-Identify the number of data job postings changed over time.
+-Analyze salaries across different countries.
+-Find the percentages of the total job entries per month.
+-Visualize insights using Seaborn and Matplotlib for better interpretation.
 
-1.   What are the most in-demand data job roles?
-2.   How has the number of data job postings changed over time?
-3.   To analyse salaries across different countries.
-4.   Find the percentages of the total job entries per month
-
+---
 # Tools I Used
 
 For my deep dive into the data analyst job market, I harnessed the power of several key tools:
@@ -24,6 +36,8 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 - **Jupyter Notebooks:** The tool I used to run my Python scripts which let me easily include my notes and analysis.
 - **Visual Studio Code:** My go-to for executing my Python scripts.
 - **Git & GitHub:** Essential for version control and sharing my Python code and analysis, ensuring collaboration and project tracking.
+
+---
 
 # Data Preparation and Cleanup
 
@@ -49,6 +63,7 @@ df = dataset['train'].to_pandas()
 df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
 df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
 ```
+---
 
 ## Filter US Jobs
 
@@ -59,7 +74,7 @@ df_US = df[df['job_country'] == 'United States']
 
 ```
 
-# The Analysis
+# Job Market Analysis:
 
 Each Jupyter notebook for this project aimed at investigating specific aspects of the data job market. Here’s how I approached each question:
 
@@ -77,8 +92,116 @@ plt.ylabel('')
 plt.show()
 ```
 
+This visualization highlights which data-related roles appear most frequently in job postings.
+By analyzing the counts of each job title, we can identify where hiring demand is concentrated in the data industry.
+
+Key Insights:
+
+👩‍💻 Data Analyst roles dominate the job market, representing the highest number of postings.
+
+🧠 Data Engineer and Data Scientist positions follow closely, showing strong demand for analytical and technical expertise.
+
+💼 Specialized roles such as Business  Analyst, Software Engineer and Senior Data Engineer have moderate but consistent openings.
 
 
+## 2. Which companies are hiring the most for data-related positions?
+
+
+```Code
+df_plot = df['company_name'].value_counts().to_frame()[1:].head(20)
+
+sns.set_theme(style='ticks')
+sns.barplot(data=df_plot, x='count', y='company_name', hue='count', palette='dark:b_r', legend=False)
+sns.despine()
+plt.title('Number of Jobs per Company')
+plt.xlabel('Number of Jobs')
+plt.ylabel('')
+plt.show()
+This visualization highlights the companies hiring the most for data-related positions.
+By analyzing the number of job postings per company, we can identify which organizations are driving demand in the data job market.
+```
+
+This visualization highlights the top companies actively hiring for data-related positions.
+By analyzing the number of job postings per company, we can identify key organizations leading the demand for data professionals.
+
+Key Insights:
+
+🏢 Booz Allen Hamilton, Dice, and Harnham are among the top employers, showing a strong demand for data professionals.
+📊 It is then followed by Insight Global, Citi and Confidenziale which also has a high volume of job listings, emphasizing the growing role of analytics and data consulting.
+🚀 These trends indicate a healthy job market across diverse industries, offering opportunities for analysts, engineers, and data scientists alike.
+
+
+## 3.  How has the number of data job postings changed over time?
+
+```Code
+df['month'] = df['job_posted_date'].dt.to_period('M')
+monthly_trend = df['month'].value_counts().sort_index()
+
+plt.figure(figsize=(10,5))
+monthly_trend.plot(kind='line', marker='o')
+plt.title("Monthly Data Job Postings Over Time")
+plt.xlabel("Month")
+plt.ylabel("Number of Job Postings")
+plt.xticks(rotation=45)
+plt.show()
+```
+
+This visualization shows how the number of data-related job postings has changed over time.
+By converting job posting dates into monthly periods, it uncovers patterns and seasonality in hiring activity.
+
+Key Insights:
+
+📈 January recorded the highest number of job postings, indicating a strong hiring phase for data professionals. It is then followed by August.
+📉 May month saw the lowest number of postings.
+📊 The trend line slowdowns toward the end of the year, likely due to year-end holidays and budget closures.
+
+
+## 4. What percentage of jobs are Remote vs Not Remote?
+```Code
+remote_counts = df['job_work_from_home'].value_counts()
+
+plt.figure(figsize=(6,6))
+remote_counts.plot(kind='pie', autopct='%1.1f%%', labels=['Not Remote', 'Remote'], explode=[0,0.1])
+plt.title("Remote vs Not Remote Job Distribution")
+plt.ylabel("")
+plt.show()
+```
+
+This visualization shows the distribution of remote vs non-remote data job postings.
+It helps identify how common remote work opportunities are within the data job market.
+
+Key Insights:
+
+🏠 Only 8.9% of data job postings are remote, indicating that fully remote roles remain relatively limited.
+🏢 A large majority — 91.1% of postings — are not remote, suggesting that most companies still prefer on-site or hybrid arrangements for data positions.
+💡 This highlights that while remote data jobs exist, they represent a small fraction of the overall market, making location flexibility less common in the data domain.
+📊 Organizations may still value in-person collaboration, access to secure systems, or team-based workflows in data projects.
+
+
+
+## 5. Which locations have the highest number of job postings
+```Code
+
+top_locations = df['job_location'].value_counts().head(10)
+
+plt.figure(figsize=(8,5))
+sns.barplot(x=top_locations.values, y=top_locations.index)
+plt.title("Top 10 Hiring Locations for Data Roles")
+plt.xlabel("Number of Postings")
+plt.ylabel("Location")
+plt.show()
+```
+This visualization highlights the top locations with the highest number of data-related job postings.
+It provides insights into where demand for data professionals is concentrated globally.
+
+Key Insights:
+
+📍 Anywhere (Remote) accounts for the largest number of postings, showing strong flexibility for some roles.
+🌏 Singapore follows closely, reflecting a growing hub for data analytics and tech jobs in Asia.
+🇫🇷 Paris, France is also among the top locations, highlighting Europe’s contribution to the global data job market.
+🇮🇳 Bengaluru, Karnataka, India and 🇬🇧 London, UK come next, indicating strong hiring activity in both Asian and European tech centers.
+💼 These trends show that while remote opportunities exist, major global cities remain key hubs for data professionals, offering diverse opportunities across analytics, engineering, and data science.
+---
 
 ```python
 fig, ax = plt.subplots(len(job_titles), 1)
