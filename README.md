@@ -8,10 +8,10 @@ The data sourced from [Luke Barousse's Python Course](https://lukebarousse.com/p
 
 Below are the questions I want to answer in my project:
 
-1. What are the skills most in demand for the top 3 most popular data roles?
-2. How are in-demand skills trending for Data Analysts?
-3. How well do jobs and skills pay for Data Analysts?
-4. What are the optimal skills for data analysts to learn? (High Demand AND High Paying) 
+1.   What are the most in-demand data job roles?
+2.   How has the number of data job postings changed over time?
+3.   To analyse salaries across different countries.
+4.   Find the percentages of the total job entries per month
 
 # Tools I Used
 
@@ -63,13 +63,22 @@ df_US = df[df['job_country'] == 'United States']
 
 Each Jupyter notebook for this project aimed at investigating specific aspects of the data job market. Here’s how I approached each question:
 
-## 1. What are the most demanded skills for the top 3 most popular data roles?
+## 1.  What are the most in-demand data job roles?
 
-To find the most demanded skills for the top 3 most popular data roles. I filtered out those positions by which ones were the most popular, and got the top 5 skills for these top 3 roles. This query highlights the most popular job titles and their top skills, showing which skills I should pay attention to depending on the role I'm targeting. 
+```Code
+df_plot = df['job_title_short'].value_counts().to_frame()
 
-View my notebook with detailed steps here: [2_Skill_Demand](2_Skill_Demand.ipynb).
+sns.set_theme(style='ticks')
+sns.barplot(data=df_plot, x='count', y='job_title_short', hue='count', palette='dark:b_r', legend=False)
+sns.despine()
+plt.title('Number of Jobs per Job Title')
+plt.xlabel('Number of Jobs')
+plt.ylabel('')
+plt.show()
+```
 
-### Visualize Data
+
+
 
 ```python
 fig, ax = plt.subplots(len(job_titles), 1)
