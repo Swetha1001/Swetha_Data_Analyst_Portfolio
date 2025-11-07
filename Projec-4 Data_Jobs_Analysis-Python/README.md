@@ -73,17 +73,7 @@ Each Jupyter notebook for this project aimed at investigating specific aspects o
 
 ## 1.  What are the most in-demand data job roles?
 
-```python
-df_plot = df['job_title_short'].value_counts().to_frame()
-
-sns.set_theme(style='ticks')
-sns.barplot(data=df_plot, x='count', y='job_title_short', hue='count', palette='dark:b_r', legend=False)
-sns.despine()
-plt.title('Number of Jobs per Job Title')
-plt.xlabel('Number of Jobs')
-plt.ylabel('')
-plt.show()
-```
+View my notebook with detailed steps here: [1 Jpobv Market Analysis](1.Job_Market_Analysis.ipynb).
 
 This visualization highlights which data-related roles appear most frequently in job postings.
 By analyzing the counts of each job title, we can identify where hiring demand is concentrated in the data industry.
