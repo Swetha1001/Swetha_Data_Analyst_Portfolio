@@ -107,7 +107,7 @@ Key Insights:
 ## 2. Which companies are hiring the most for data-related positions?
 
 
-```Code
+```python
 df_plot = df['company_name'].value_counts().to_frame()[1:].head(20)
 
 sns.set_theme(style='ticks')
@@ -133,7 +133,7 @@ Key Insights:
 
 ## 3.  How has the number of data job postings changed over time?
 
-```Code
+```python
 df['month'] = df['job_posted_date'].dt.to_period('M')
 monthly_trend = df['month'].value_counts().sort_index()
 
@@ -157,7 +157,8 @@ Key Insights:
 
 
 ## 4. What percentage of jobs are Remote vs Not Remote?
-```Code
+
+```python
 remote_counts = df['job_work_from_home'].value_counts()
 
 plt.figure(figsize=(6,6))
@@ -180,7 +181,8 @@ Key Insights:
 
 
 ## 5. Which locations have the highest number of job postings
-```Code
+
+```python
 
 top_locations = df['job_location'].value_counts().head(10)
 
